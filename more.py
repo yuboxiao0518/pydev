@@ -1,3 +1,5 @@
+import os
+
 def more(text,numlines=15):
     lines=text.splitlines()
     while lines:
@@ -7,6 +9,5 @@ def more(text,numlines=15):
         if lines and input('more?') not in ['y','Y']:break
 
 if __name__=='__main__':
-    import os
     path='D:\\mylog'
     more(open(os.path.join(path,'log.csv')).read(),10)
