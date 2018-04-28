@@ -1,11 +1,13 @@
 from configparser import ConfigParser
 import os
-
 filePath = 'D:\\mylog'
 
 
-def getconf(key):
+def get(typ, key):
     conf = ConfigParser()
-    conf.read(os.path.join(filePath, 'conf.ini'))
-    value = conf.get('db', 'db_pass')
+    conf.read(os.path.join(os.getcwd()+'\config','conf.ini'))
+    value = conf.get(typ, key)
     return value
+
+if __name__ == '__main__':
+    print(get('path','config_path'))
