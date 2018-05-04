@@ -32,7 +32,8 @@ def csvDao():
     end = datetime.date.today()
     #apple=ts.get_h_data('300032',start='2018-05-01',end='2018-05-04')
     apple=ts.get_today_all()
-    print(apple.head(10))
+    data=pd.DataFrame(apple)
+    print(data)
 
 
 if __name__ == '__main__':
